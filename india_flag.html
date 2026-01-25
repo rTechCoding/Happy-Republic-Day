@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Republic Day | 26 January</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(to bottom,
+                    #ff9933 0%,
+                    #ff9933 33.3%,
+                    #ffffff 33.3%,
+                    #ffffff 66.6%,
+                    #138808 66.6%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Card */
+        .card {
+            padding: 40px 25px;
+            border-radius: 16px;
+            max-width: 520px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(to bottom,
+                    #ff9933 0%,
+                    #ff9933 25%,
+                    #ffffff 33%,
+                    #ffffff 68%,
+                    #138808 75%);
+            z-index: 1;
+        }
+
+        .tricolor-text {
+            font-size: 42px;
+            font-weight: bold;
+            background: linear-gradient(to bottom,
+                    #ff9933 20%,
+                    #ffffff 50%,
+                    #138808 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .date {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: #444;
+            font-weight: 600;
+        }
+
+        .chakra {
+            width: 120px;
+            height: 120px;
+            border: 6px solid #000080;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            position: relative;
+            animation: spin 6s linear infinite;
+        }
+
+        .chakra::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: repeating-conic-gradient(#000080 0deg 5deg,
+                    transparent 5deg 15deg);
+            border-radius: 50%;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        p {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            background: linear-gradient(to bottom,
+                    #ff9933 20%,
+                    #ffffff 50%,
+                    #138808 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ✈️ Fighter Jets (AUTO) */
+        .jet {
+            position: fixed;
+            left: -120px;
+            /* color: #000080; */
+            z-index: 9999;
+            pointer-events: none;
+            animation-name: fly;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        .plane1 {
+            top: 15%;
+            animation-duration: 4s;
+        }
+
+        .plane2 {
+            top: 25%;
+            animation-duration: 4.5s;
+        }
+
+        .plane3 {
+            top: 35%;
+            animation-duration: 5s;
+        }
+
+        .plane4 {
+            top: 45%;
+            animation-duration: 5.5s;
+        }
+
+        .plane5 {
+            top: 55%;
+            animation-duration: 6s;
+        }
+
+        .plane6 {
+            top: 65%;
+            animation-duration: 6.5s;
+        }
+
+        @keyframes fly {
+            0% {
+                left: -120px;
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                left: 110%;
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tricolor-text {
+                font-size: 30px;
+            }
+
+            .chakra {
+                width: 90px;
+                height: 90px;
+                margin: auto;
+                margin-top: 100px;
+                margin-bottom: 30px;
+            }
+        }
+
+        .plane1 {
+            color: orange;
+        }
+
+        .plane2 {
+            color: white;
+        }
+
+        .plane3 {
+            color: green;
+        }
+
+        .plane4 {
+            color: orange;
+        }
+
+        .plane5 {
+            color: white;
+        }
+
+        .plane6 {
+            color: green;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 30px;
+            background: linear-gradient(45deg, #ff9933, #138808);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        /* 🎉 Party Popper */
+        .confetti {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: red;
+            top: 50%;
+            left: 50%;
+            animation: pop 2s ease-out forwards;
+            z-index: 99999;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(var(--x), var(--y)) scale(0.2);
+                opacity: 0;
+            }
+        }
+
+        p span {
+            color: #000080;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ✈️ Auto Flying Jets -->
+    <div class="fa fa-fighter-jet fa-3x jet plane1"></div>
+    <div class="fa fa-fighter-jet fa-3x jet plane2"></div>
+    <div class="fa fa-fighter-jet fa-3x jet plane3"></div>
+    <div class="fa fa-fighter-jet fa-3x jet plane4"></div>
+    <div class="fa fa-fighter-jet fa-3x jet plane5"></div>
+    <div class="fa fa-fighter-jet fa-3x jet plane6"></div>
+
+    <div class="card">
+        <h1 class="tricolor-text">Happy Republic Day</h1>
+        <div class="date">26 January</div>
+
+        <div class="chakra"></div>
+
+        <p><span>
+                Let us remember the sacrifices of our freedom fighters
+                and celebrate the spirit of unity, democracy, and pride.
+                <br>Jai Hind!</span>
+        </p>
+
+        <a href="#" class="btn" onclick="partyPop()">Celebrate India</a>
+
+        <footer>© 2026 | Republic Day Built By rTechCoding</footer>
+    </div>
+
+    <script>
+        function partyPop() {
+            for (let i = 0; i < 500; i++) {
+                const confetti = document.createElement("div");
+                confetti.className = "confetti";
+
+                const colors = ["#ff9933", "#ffffff", "#138808"];
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+                confetti.style.setProperty("--x", `${Math.random() * 1000 - 600}px`);
+                confetti.style.setProperty("--y", `${Math.random() * 1000 - 600}px`);
+
+                document.body.appendChild(confetti);
+
+                setTimeout(() => confetti.remove(), 1000);
+            }
+        }
+
+        /* 🎉 AUTO CELEBRATE EVERY 3 SECONDS */
+        setInterval(() => {
+            partyPop();
+        }, 3000);
+    </script>
+</body>
+
+</html>
